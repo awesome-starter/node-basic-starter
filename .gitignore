@@ -1,4 +1,5 @@
-.DS_Store
 node_modules
-*.exe
-*.rar
+.DS_Store
+dist
+dist-ssr
+*.local
