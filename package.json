@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node src/index.js",
     "format": "prettier --write .",
-    "backup": "git add . && git commit -m \"chore: save the coding progress\" && git push"
+    "backup": "git add . && git commit -m \"chore: backup\" && git push"
   },
   "devDependencies": {
     "eslint": "^8.6.0",
