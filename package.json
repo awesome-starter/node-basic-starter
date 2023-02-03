@@ -2,24 +2,35 @@
   "name": "node-basic-starter",
   "version": "0.0.0",
   "description": "A basic template for Node.js project.",
-  "author": "chengpeiquan",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "main": "src/index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "node src/index.js",
-    "format": "prettier --write .",
-    "backup": "git add . && git commit -m \"chore: backup\" && git push"
+    "format": "prettier --write src",
+    "mirror:get": "npm config get registry",
+    "mirror:set": "npm config set registry https://registry.npmmirror.com",
+    "mirror:rm": "npm config rm registry",
+    "backup": "git add . && git commit -m \"chore: backup\" && git push",
+    "up": "npx npm-check-updates -u",
+    "prepare": "simple-git-hooks"
+  },
+  "dependencies": {
+    "@bassist/node-utils": "^0.2.0",
+    "@bassist/utils": "^0.9.0",
+    "@withtypes/fs-extra": "^0.1.1"
   },
   "devDependencies": {
-    "eslint": "^8.6.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "lint-staged": "^12.1.5",
-    "prettier": "^2.5.1"
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "simple-git-hooks": "^2.8.1"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged --concurrent false"
+  "simple-git-hooks": {
+    "pre-commit": "npm exec lint-staged --concurrent false"
   },
   "lint-staged": {
     "*.js": [
