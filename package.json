@@ -30,7 +30,7 @@
     "simple-git-hooks": "^2.8.1"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged --concurrent false"
+    "pre-commit": "pnpm exec lint-staged --concurrent false"
   },
   "lint-staged": {
     "*.js": [
