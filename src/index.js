@@ -21,7 +21,7 @@ async function run() {
   // Use some commonly used utility functions
   // https://paka.dev/npm/@bassist/utils
   console.log('Get a random string:')
-  console.log(randomString());
+  console.log(randomString())
   console.log()
 }
 run().catch((e) => {
