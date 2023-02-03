@@ -25,12 +25,11 @@
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
     "simple-git-hooks": "^2.8.1"
   },
   "simple-git-hooks": {
-    "pre-commit": "lint-staged --concurrent false"
+    "pre-commit": "npx lint-staged --concurrent false"
   },
   "lint-staged": {
     "*.js": [
