@@ -1,13 +1,18 @@
-const { resolve } = require('path')
-const { readJSONSync } = require('@withtypes/fs-extra')
-const { isEmpty } = require('@bassist/node-utils')
-const { randomString } = require('@bassist/utils')
+import { dirname, resolve } from 'path'
+import { fileURLToPath } from 'url'
+import { readJSONSync } from '@withtypes/fs-extra'
+import { isEmpty } from '@bassist/node-utils'
+import { randomString } from '@bassist/utils'
 
 async function run() {
+  // Now this template is ES Module enabled,
+  // so by default, you need to declare the __dirname variable.
+  const __filename = fileURLToPath(import.meta.url)
+  const __dirname = dirname(__filename)
+
   // Read package info
-  const { name, description } = readJSONSync(
-    resolve(__dirname, '../package.json')
-  )
+  const pkgPath = resolve(__dirname, '../package.json')
+  const { name, description } = readJSONSync(pkgPath)
   console.log('Package Info:')
   console.log({ name, description })
   console.log()

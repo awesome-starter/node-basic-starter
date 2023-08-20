@@ -6,8 +6,10 @@
   "main": "src/index.js",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "node src/index.js",
+    "lint": "eslint src",
     "format": "prettier --write src",
     "mirror:get": "npm config get registry",
     "mirror:set": "npm config set registry https://registry.npmmirror.com",
@@ -17,16 +19,15 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "@bassist/node-utils": "^0.2.0",
-    "@bassist/utils": "^0.9.0",
+    "@bassist/node-utils": "^0.3.0",
+    "@bassist/utils": "^0.12.0",
     "@withtypes/fs-extra": "^0.1.1"
   },
   "devDependencies": {
-    "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.3",
-    "simple-git-hooks": "^2.8.1"
+    "@bassist/eslint": "^0.2.1",
+    "eslint": "^8.47.0",
+    "prettier": "^3.0.2",
+    "simple-git-hooks": "^2.9.0"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged --concurrent false"
